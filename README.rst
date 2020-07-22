@@ -3,7 +3,7 @@
 ==========================
  
 See `README
-<https://gitlab.devtools.intel.com/infodev/dpcpp-language-reference/-/blob/dpcpp/README.rst>`__
+<https://gitlab.devtools.intel.com/infodev/dpcpp-language-reference/-/blob/sycl/README.rst>`__
 in sycl branch for general instructions.
 
 dpcpp
