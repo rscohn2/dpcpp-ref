@@ -2,6 +2,9 @@
  DPC++ Language Reference
 ==========================
  
+See `README <../sycl/README.rst> in sycl branch for general
+instructions.
+
 dpcpp
 =====
 
@@ -22,20 +25,6 @@ SYCL
 	  
 `HTML
 <https://infodev.gitlab-pages.devtools.intel.com/dpcpp-language-reference/sycl/sycl-index.html>`__
-
-Updates
-=======
-
-If the change is common to SYCL and DPC++, then commit the change to the
-sycl branch and merge it into dpcpp branch::
-
-  git checkout dpcpp
-  git merge sycl
-  # resolve conflicts and commit
-
-
-Contributors and reviewers may submit a pull request, comment on an
-existing merge request, or file an issue to provide input.
 
 Contact `Robert Cohn <mailto:robert.s.cohn@intel.com>`__ or `Jacqui
 DuPont <mailto:jacqui.b.dupont@intel.com>`__ with questions.
