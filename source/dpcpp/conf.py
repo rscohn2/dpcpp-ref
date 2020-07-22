@@ -32,6 +32,9 @@ author = 'Intel'
 
 # -- General configuration ---------------------------------------------------
 
+# The master toctree document.
+master_doc = 'dpcpp-index'
+
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
@@ -46,7 +49,7 @@ extensions = [
 html_context = {
     'display_github': True,
     'github_user': 'rscohn2',
-    'github_repo': 'syclreference',
+    'github_repo': 'dpcpp-ref',
     'github_version': 'master/source/'
 }
 
@@ -95,13 +98,6 @@ html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
     # 'fixed_sidebar': True,
     # 'page_width': 'max-width'
-}
-
-html_context = {
-    'display_github': True,
-    'github_user': 'rscohn2',
-    'github_repo': 'syclreference',
-    'github_version': 'master/source/'
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,

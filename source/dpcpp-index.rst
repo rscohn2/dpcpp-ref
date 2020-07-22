@@ -6,10 +6,9 @@ DPC++ Reference
 
 .. toctree::
 
-   intro
+   dpcpp-intro
    model/index
    language/index
-   iface/index
-   style-guide/index
+   iface/dpcpp-index
    glossary
    
