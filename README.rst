@@ -2,8 +2,9 @@
  DPC++ Language Reference
 ==========================
  
-See `README <../sycl/README.rst> in sycl branch for general
-instructions.
+See `README
+<https://gitlab.devtools.intel.com/infodev/dpcpp-language-reference/-/blob/dpcpp/README.rst>`__
+in sycl branch for general instructions.
 
 dpcpp
 =====
