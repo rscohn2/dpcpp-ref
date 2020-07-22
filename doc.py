@@ -177,7 +177,7 @@ def main():
     global args
     parser = argparse.ArgumentParser(description='Build doc.')
     parser.add_argument('action',choices=commands.keys())
-    parser.add_argument('--compiler', default='sycl')
+    parser.add_argument('--compiler', default='dpcpp')
     parser.add_argument('--dry-run', action='store_true')
     parser.add_argument('-W', action='store_true')
     parser.add_argument('--verbose', action='store_true')
