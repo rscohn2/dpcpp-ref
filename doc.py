@@ -138,6 +138,19 @@ def examples(target=None):
                 log('Failed')
 
 @action
+def ipldt(target=None):
+    ipldt = '_tools/ipldt3_lin_intel64/ipldt3_lin_intel64'
+    if not os.path.exists(ipldt):
+        makedirs('_tools')
+        shell('curl -s -o _tools/ipldt3_lin_intel64.tgz -k http://pvtools.intel.com/files/ipldt3_lin_intel64.tgz')
+        shell('tar -xf _tools/ipldt3_lin_intel64.tgz -C _tools/')
+    makedirs('build/ipldt')
+    #shell('%s --i source -c 50 --db-rel-path --usedb ipldt.db --gendb build/ipldt/hits.db --r-overwrite --r build/ipldt/logs' % (ipldt))
+    shell('%s --i source -c 50 --db-rel-path --gendb build/ipldt/hits.db --r-overwrite --r build/ipldt/logs' % (ipldt))
+    
+
+
+@action
 def prep(target=None):
 #    examples()
 #    doxygen()
@@ -167,6 +180,7 @@ commands = {'ci': ci,
             'clean': build,
             'examples': examples,
             'html': build,
+            'ipldt': ipldt,
             'latexpdf': build,
             'prep': prep,
             'pseudoxml': build,
