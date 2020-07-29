@@ -6,9 +6,9 @@ jobs:
     container: rscohn2/oneapi-spec:latest
     steps:
     - uses: nelonoel/branch-name@v1
-    - name Checkout
+    - name: Checkout
       uses: actions/checkout@v2
-    - name Checkout gh-pages
+    - name: Checkout gh-pages
       uses: actions/checkout@v2
       with:
         ref: gh-pages
