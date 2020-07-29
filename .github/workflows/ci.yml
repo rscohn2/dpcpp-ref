@@ -5,7 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     container: rscohn2/oneapi-spec:latest
     steps:
-    - uses: nelonoel/branch-name@v1
     - name: Checkout
       uses: actions/checkout@v2
     - name: Checkout gh-pages
