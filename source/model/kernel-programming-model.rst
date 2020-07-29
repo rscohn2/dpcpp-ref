@@ -18,7 +18,7 @@ through several mechanisms.
 
 The following code sample shows two combinations of invoking kernels:
 
-#. single_task and C++ lambda (lines 30-35)
+#. single_task and C++ lambda (lines 32-34)
 #. parallel_for and functor (lines 8-16 and line 46)
 
 .. literalinclude:: /examples/kernel-model.cpp

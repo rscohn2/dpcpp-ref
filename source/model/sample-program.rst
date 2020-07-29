@@ -4,6 +4,10 @@
  Anatomy of a DPC++ Program
 ============================
 
+We start with a DPC++ example application to illustrate basic DPC++
+concepts. We continue by breaking down the DPC++ programming model
+into 4 areas as follows.
+
 The following example uses the oneAPI programming model to add 2
 vectors. When compiled and executed, the sample program computes the
 1024 element vector add in parallel on the accelerator. This assumes
