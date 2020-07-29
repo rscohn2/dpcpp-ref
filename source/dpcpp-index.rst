@@ -11,4 +11,5 @@ DPC++ Reference
    language/index
    iface/dpcpp-index
    glossary
-   
+   notices
+
