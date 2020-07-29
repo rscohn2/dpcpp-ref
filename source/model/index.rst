@@ -15,9 +15,6 @@ functionality is invoked via interfaces defined by a set of C++
 classes, which are introduced in this section and described in detail
 in :ref:`programming-interface`.
 
-We start with a DPC++ example application to illustrate basic DPC++ concepts. We continue by breaking down the DPC++ programming model into 4 areas as follows.
-
-
 .. toctree::
 
    
