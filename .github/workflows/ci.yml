@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         ref: gh-pages
-        path gh-pages
+        path: gh-pages
     - name: Install prerequisites
       run: |
           apt-get update -qq
