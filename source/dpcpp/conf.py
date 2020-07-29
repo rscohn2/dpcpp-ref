@@ -46,6 +46,13 @@ extensions = [
 #    'summary'
 ]
 
+html_context = {
+    'display_github': True,
+    'github_user': 'oneapi-src',
+    'github_repo': 'dpcpp-ref',
+    'github_version': 'dpcpp/source/'
+}
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
