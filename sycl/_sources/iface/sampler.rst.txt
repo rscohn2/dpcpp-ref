@@ -1,6 +1,11 @@
+..
+  Copyright 2020 Intel Corporation
+
 ********
 Samplers
 ********
+
+.. seealso:: |SYCL_SPEC_SAMPLER|
 
 ==============
  address_mode

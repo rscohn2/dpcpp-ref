@@ -1,3 +1,6 @@
+..
+  Copyright 2020 Intel Corporation
+
 .. rst-class:: api-class
 	       
 .. _h_item:
@@ -10,6 +13,8 @@
 
    template <int dimensions>
    class h_item;
+
+.. seealso:: |SYCL_SPEC_H_ITEM|
 
 .. member-toc::
 

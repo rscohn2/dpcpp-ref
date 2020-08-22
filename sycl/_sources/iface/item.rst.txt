@@ -1,3 +1,6 @@
+..
+  Copyright 2020 Intel Corporation
+
 .. rst-class:: api-class
 	       
 .. _item:
@@ -26,6 +29,8 @@ constructor because only the SYCL runtime needs to construct an
 dimensions      Number of dimensions in index space
 with_offset     True if item has offset
 ==============  ===
+
+.. seealso:: |SYCL_SPEC_ITEM|
 
 .. member-toc::
 

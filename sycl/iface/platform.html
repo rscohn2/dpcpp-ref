@@ -170,7 +170,7 @@
         
             
             
-              <a href="https://gitlab.com/rscohn2/sycl-ref/blob/sycl/source/iface/platform.rst" class="fa fa-gitlab"> Edit on GitLab</a>
+              <a href="https://github.com/oneapi-src/dpcpp-ref/blob/sycl/source/iface/platform.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -193,12 +193,14 @@
 </div>
 <p>Abstraction for SYCL platform.</p>
 <p>A platform contains 1 or more SYCL devices, or a host device.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://www.khronos.org/registry/SYCL/specs/sycl-2020-provisional.pdf">SYCL Specification</a> Section 4.6.2</p>
+</div>
 <p class="rubric">Member and nonmember functions</p>
 <p class="rubric" id="platform-example">Example</p>
 <p>Enumerate the platforms and the devices they contain.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;CL/sycl.hpp&gt;</span>
-
-<span class="n">namespace</span> <span class="n">sycl</span> <span class="o">=</span> <span class="n">cl</span><span class="p">::</span><span class="n">sycl</span><span class="p">;</span>
 
 <span class="nb">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
   <span class="n">auto</span> <span class="n">platforms</span> <span class="o">=</span> <span class="n">sycl</span><span class="p">::</span><span class="n">platform</span><span class="p">::</span><span class="n">get_platforms</span><span class="p">();</span>
