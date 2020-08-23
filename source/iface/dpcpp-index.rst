@@ -21,7 +21,7 @@ Header File
 
 A single header file must be included::
 
-  #include "sycl.hpp"
+  #include "CL/sycl.hpp"
 
 
 Namespaces
