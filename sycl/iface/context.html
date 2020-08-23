@@ -13,7 +13,6 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
 
   
   
@@ -54,9 +53,12 @@
           
 
           
-            <a href="../sycl-index.html" class="icon icon-home" alt="Documentation Home"> SYCL Reference
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> SYCL Reference
           
 
+          
+            
+            <img src="../_static/Khronos_Group_SYCL_logo.svg" class="logo" alt="Logo"/>
           
           </a>
 
@@ -131,7 +133,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../sycl-index.html">SYCL Reference</a>
+          <a href="../index.html">SYCL Reference</a>
         
       </nav>
 
@@ -160,7 +162,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../sycl-index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="sycl-index.html">Interface</a> &raquo;</li>
         
@@ -170,9 +172,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            
-              <a href="https://gitlab.com/rscohn2/sycl-ref/blob/sycl/source/iface/context.rst" class="fa fa-gitlab"> Edit on GitLab</a>
-            
+            <a href="../_sources/iface/context.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -197,6 +197,10 @@ devices associated with the platform.</p>
 <p>A context may include a subset of the devices provided by the
 platform. The same platform may be associated with more than one
 context, but a device can only be part of a single context.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://www.khronos.org/registry/SYCL/specs/sycl-2020-provisional.pdf">SYCL Specification</a> Section 4.6.3</p>
+</div>
 <p class="rubric">Member and nonmember functions</p>
 <div class="section" id="constructors">
 <h3>(constructors)<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h3>
@@ -236,10 +240,6 @@ or devices are supplied.</p>
 <dt>clContext</dt><dd><p>Constructed context contains cl_context</p>
 </dd>
 </dl>
-<div class="admonition-todo admonition" id="id2">
-<p class="admonition-title">Todo</p>
-<p>Examples that combines the functions</p>
-</div>
 <p>Constructs a context</p>
 </div>
 <div class="section" id="get">

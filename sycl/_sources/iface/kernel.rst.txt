@@ -1,3 +1,6 @@
+..
+  Copyright 2020 Intel Corporation
+
 ******
 Kernel
 ******
@@ -17,6 +20,8 @@ Kernel
 
 Abstraction of a kernel object.
 
+
+.. seealso:: |SYCL_SPEC_KERNEL|
 
 .. member-toc::
 

@@ -13,7 +13,6 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
 
   
   
@@ -54,9 +53,12 @@
           
 
           
-            <a href="../sycl-index.html" class="icon icon-home" alt="Documentation Home"> SYCL Reference
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> SYCL Reference
           
 
+          
+            
+            <img src="../_static/Khronos_Group_SYCL_logo.svg" class="logo" alt="Logo"/>
           
           </a>
 
@@ -126,7 +128,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../sycl-index.html">SYCL Reference</a>
+          <a href="../index.html">SYCL Reference</a>
         
       </nav>
 
@@ -155,7 +157,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../sycl-index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="sycl-index.html">Interface</a> &raquo;</li>
         
@@ -165,9 +167,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            
-              <a href="https://gitlab.com/rscohn2/sycl-ref/blob/sycl/source/iface/usm-malloc.rst" class="fa fa-gitlab"> Edit on GitLab</a>
-            
+            <a href="../_sources/iface/usm-malloc.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -229,6 +229,10 @@
 <p>The host may not reference the memory. To access the data on the host,
 the device must copy it to host-accessible memory.</p>
 <p>Deallocate with <a class="reference internal" href="#free">free</a>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://www.khronos.org/registry/SYCL/specs/sycl-2020-provisional.pdf">SYCL Specification</a> Section 4.8.5.1</p>
+</div>
 </div>
 <div class="section" id="malloc-host">
 <h1>malloc_host<a class="headerlink" href="#malloc-host" title="Permalink to this headline">¶</a></h1>
@@ -267,6 +271,10 @@ the device must copy it to host-accessible memory.</p>
 <p>Returns a pointer to memory that resides on the host.</p>
 <p>Host and device may reference the memory.</p>
 <p>Deallocate with <a class="reference internal" href="#free">free</a>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://www.khronos.org/registry/SYCL/specs/sycl-2020-provisional.pdf">SYCL Specification</a> Section 4.8.5.2</p>
+</div>
 </div>
 <div class="section" id="malloc-shared">
 <h1>malloc_shared<a class="headerlink" href="#malloc-shared" title="Permalink to this headline">¶</a></h1>
@@ -317,6 +325,10 @@ the device must copy it to host-accessible memory.</p>
 <p>The SYCL runtime may migrate the data between host and device to
 optimize access.</p>
 <p>Deallocate with <a class="reference internal" href="#free">free</a>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://www.khronos.org/registry/SYCL/specs/sycl-2020-provisional.pdf">SYCL Specification</a> Section 4.8.5.2</p>
+</div>
 </div>
 <div class="section" id="free">
 <h1>free<a class="headerlink" href="#free" title="Permalink to this headline">¶</a></h1>
@@ -326,6 +338,10 @@ optimize access.</p>
 </div>
 <p>Free memory allocated by <a class="reference internal" href="#malloc-device">malloc_device</a>, <a class="reference internal" href="#malloc-host">malloc_host</a>, or
 <a class="reference internal" href="#malloc-shared">malloc_shared</a>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://www.khronos.org/registry/SYCL/specs/sycl-2020-provisional.pdf">SYCL Specification</a> Section 4.8.5.4</p>
+</div>
 </div>
 
 

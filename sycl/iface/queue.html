@@ -13,7 +13,6 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
 
   
   
@@ -54,9 +53,12 @@
           
 
           
-            <a href="../sycl-index.html" class="icon icon-home" alt="Documentation Home"> SYCL Reference
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> SYCL Reference
           
 
+          
+            
+            <img src="../_static/Khronos_Group_SYCL_logo.svg" class="logo" alt="Logo"/>
           
           </a>
 
@@ -131,7 +133,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../sycl-index.html">SYCL Reference</a>
+          <a href="../index.html">SYCL Reference</a>
         
       </nav>
 
@@ -160,7 +162,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../sycl-index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="sycl-index.html">Interface</a> &raquo;</li>
         
@@ -170,9 +172,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            
-              <a href="https://gitlab.com/rscohn2/sycl-ref/blob/sycl/source/iface/queue.rst" class="fa fa-gitlab"> Edit on GitLab</a>
-            
+            <a href="../_sources/iface/queue.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -200,11 +200,9 @@ defines a kernel function, the prerequisites to execute the kernel
 function, and an invocation of the kernel function on an index
 space. After submitting the command group, a program may use the queue
 to monitor the completion of the task for completion and errors.</p>
-<p class="rubric">Example</p>
-<div class="admonition-todo admonition" id="id3">
-<p class="admonition-title">Todo</p>
-<p>Example uses basic constructor and demonstrates the commonly uses
-member functions.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://www.khronos.org/registry/SYCL/specs/sycl-2020-provisional.pdf">SYCL Specification</a> Section 4.6.5</p>
 </div>
 <p class="rubric">Member and nonmember functions</p>
 <div class="section" id="constructors">
@@ -279,11 +277,6 @@ queue with an <code class="docutils literal notranslate"><span class="pre">async
 <dt>invalid_object_error</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">syclContext</span></code> does not encapsulate <code class="docutils literal notranslate"><span class="pre">syclDevice</span></code>.</p>
 </dd>
 </dl>
-<p class="rubric">Example</p>
-<div class="admonition-todo admonition" id="id4">
-<p class="admonition-title">Todo</p>
-<p>exercise various constructors</p>
-</div>
 </div>
 <div class="section" id="get">
 <h3>get<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h3>

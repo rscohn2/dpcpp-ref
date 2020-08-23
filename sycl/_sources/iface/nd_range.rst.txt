@@ -1,3 +1,6 @@
+..
+  Copyright 2020 Intel Corporation
+
 .. rst-class:: api-class
 	       
 .. _nd_range:
@@ -24,6 +27,8 @@ execute a kernel on a set of work items.
 dimensions        Number of dimensions
 ================  ===
 
+
+.. seealso:: |SYCL_SPEC_ND_RANGE|
 
 .. member-toc::
    
