@@ -32,8 +32,8 @@ Unless otherwise noted, all symbols should be prefixed with the
 ``info::device::name`` is ``sycl::info::device::name``.
 
 
-Standard Library Classes
-========================
+.. Standard Library Classes
+.. ========================
 
 
 .. _common-interface:
@@ -140,19 +140,19 @@ IO
 
    stream
 
-Built-in functions
-==================
+.. Built-in functions
+.. ==================
 
-.. toctree::
+.. .. toctree::
 
-   math
-   integer
-   common
-   geometric
-   relational
-   vector
-   synchronization
-   printf
+..   math
+..   integer
+..   common
+..   geometric
+..   relational
+..   vector
+..   synchronization
+..   printf
 
 
 
