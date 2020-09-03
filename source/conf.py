@@ -121,8 +121,8 @@ todo_include_todos = False
 
 # -- Options for HTML output -------------------------------------------------
 
-#html_logo = '_static/Khronos_Group_SYCL_logo.svg'
-#html_favicon = '_static/favicon.png'
+html_logo = '_static/oneAPI-rgb-rev-100.png'
+html_favicon = '_static/favicons.png'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
@@ -137,6 +137,8 @@ html_theme_options = {
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+html_js_files = ['custom.js']
+html_css_files = ['custom.css']
 
 
 html_context = {
