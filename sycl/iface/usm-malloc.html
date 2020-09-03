@@ -179,7 +179,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="malloc-device">
-<h1>malloc_device<a class="headerlink" href="#malloc-device" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>malloc_device<a class="headerlink" href="#malloc-device" title="Permalink to this headline">¶</a></h1>
 <p><em>Since SYCL 2020</em></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span><span class="o">*</span> <span class="n">sycl</span><span class="p">::</span><span class="n">malloc_device</span><span class="p">(</span><span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span>
                           <span class="n">const</span> <span class="n">sycl</span><span class="p">::</span><span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
@@ -224,8 +224,11 @@
 </tbody>
 </table>
 <p>Returns a pointer to memory that resides on the device.</p>
-<p>The host may not reference the memory. To access the data on the host,
-the device must copy it to host-accessible memory.</p>
+<p>The host may not directly reference the memory, but can read and write
+the memory with <a class="reference internal" href="queue.html#queue"><span class="std std-ref">queue</span></a> member functions (<a class="reference internal" href="queue.html#queue-memset"><span class="std std-ref">memset</span></a>,
+<a class="reference internal" href="queue.html#queue-memcpy"><span class="std std-ref">memcpy</span></a>, <a class="reference internal" href="queue.html#queue-fill"><span class="std std-ref">fill</span></a>) or <a class="reference internal" href="command-group-handler.html#handler"><span class="std std-ref">handler</span></a> member
+functions (<a class="reference internal" href="command-group-handler.html#handler-memset"><span class="std std-ref">memset</span></a>, <a class="reference internal" href="command-group-handler.html#handler-memcpy"><span class="std std-ref">memcpy</span></a>, and
+<a class="reference internal" href="command-group-handler.html#handler-fill"><span class="std std-ref">fill</span></a>).</p>
 <p>Deallocate with <a class="reference internal" href="#free">free</a>.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>

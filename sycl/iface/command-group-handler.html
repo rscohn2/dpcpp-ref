@@ -190,7 +190,7 @@
   <div class="section" id="invoking-kernels">
 <h1>Invoking kernels<a class="headerlink" href="#invoking-kernels" title="Permalink to this headline">¶</a></h1>
 <div class="api-class section" id="handler">
-<h2>handler<a class="headerlink" href="#handler" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>handler<a class="headerlink" href="#handler" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">handler</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -427,10 +427,12 @@ destination, or both source and destination are
 <p>Updates host copy of data associated with accessor.</p>
 </div>
 <div class="section" id="fill">
-<h3>fill<a class="headerlink" href="#fill" title="Permalink to this headline">¶</a></h3>
+<span id="handler-fill"></span><h3>fill<a class="headerlink" href="#fill" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">template</span> <span class="o">&lt;</span><span class="n">typename</span> <span class="n">T</span><span class="p">,</span> <span class="nb">int</span> <span class="n">dim</span><span class="p">,</span> <span class="n">access</span><span class="p">::</span><span class="n">mode</span> <span class="n">mode</span><span class="p">,</span>
           <span class="n">access</span><span class="p">::</span><span class="n">target</span> <span class="n">tgt</span><span class="p">,</span> <span class="n">access</span><span class="p">::</span><span class="n">placeholder</span> <span class="n">isPlaceholder</span><span class="o">&gt;</span>
-<span class="n">void</span> <span class="n">fill</span><span class="p">(</span><span class="n">accessor</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">tgt</span><span class="p">,</span> <span class="n">isPlaceholder</span><span class="o">&gt;</span> <span class="n">dest</span><span class="p">,</span> <span class="n">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">src</span><span class="p">);</span>
+<span class="n">void</span> <span class="n">fill</span><span class="p">(</span><span class="n">accessor</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">tgt</span><span class="p">,</span> <span class="n">isPlaceholder</span><span class="o">&gt;</span> <span class="n">dest</span><span class="p">,</span> <span class="n">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">pattern</span><span class="p">);</span>
+<span class="n">template</span> <span class="o">&lt;</span><span class="n">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="n">event</span> <span class="n">fill</span><span class="p">(</span><span class="n">void</span><span class="o">*</span> <span class="n">ptr</span><span class="p">,</span> <span class="n">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">count</span><span class="p">);</span>
 </pre></div>
 </div>
 <p class="rubric">Template parameters</p>
@@ -467,13 +469,28 @@ destination, or both source and destination are
 <tr class="row-odd"><td><p>dest</p></td>
 <td><p>Destination of fill operation</p></td>
 </tr>
-<tr class="row-even"><td><p>src</p></td>
+<tr class="row-even"><td><p>pattern</p></td>
 <td><p>Value to fill</p></td>
 </tr>
 </tbody>
 </table>
-<p>Fill the destination of the memory associated with the accessor with
-the value in <code class="docutils literal notranslate"><span class="pre">src</span></code>.</p>
+<p>Fill the destination with the value in <code class="docutils literal notranslate"><span class="pre">pattern</span></code>.  The destination
+may be memory associated with an accessor or allocated with
+<a class="reference internal" href="usm-malloc.html#malloc-device"><span class="std std-ref">malloc_device</span></a>.</p>
+</div>
+<div class="section" id="memcpy">
+<span id="handler-memcpy"></span><h3>memcpy<a class="headerlink" href="#memcpy" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">memcpy</span><span class="p">(</span><span class="n">void</span><span class="o">*</span> <span class="n">dest</span><span class="p">,</span> <span class="n">const</span> <span class="n">void</span><span class="o">*</span> <span class="n">src</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Set memory allocated with <a class="reference internal" href="usm-malloc.html#malloc-device"><span class="std std-ref">malloc_device</span></a>.</p>
+</div>
+<div class="section" id="memset">
+<span id="handler-memset"></span><h3>memset<a class="headerlink" href="#memset" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">memset</span><span class="p">(</span><span class="n">void</span><span class="o">*</span> <span class="n">ptr</span><span class="p">,</span> <span class="nb">int</span> <span class="n">value</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Set memory allocated with <a class="reference internal" href="usm-malloc.html#malloc-device"><span class="std std-ref">malloc_device</span></a>.</p>
 </div>
 </div>
 </div>
