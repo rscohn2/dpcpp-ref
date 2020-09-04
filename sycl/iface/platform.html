@@ -255,13 +255,13 @@ that includes the preferred device.</p>
 <code class="docutils literal notranslate"><span class="pre">cl_platform_id</span></code>.</p>
 </div>
 <div class="section" id="get-devices">
-<h3>get_devices<a class="headerlink" href="#get-devices" title="Permalink to this headline">¶</a></h3>
+<span id="platform-get-devices"></span><h3>get_devices<a class="headerlink" href="#get-devices" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vector_class</span><span class="o">&lt;</span><span class="n">device</span><span class="o">&gt;</span> <span class="n">get_devices</span><span class="p">(</span>
    <span class="n">info</span><span class="p">::</span><span class="n">device_type</span> <span class="o">=</span> <span class="n">info</span><span class="p">::</span><span class="n">device_type</span><span class="p">::</span><span class="nb">all</span><span class="p">)</span> <span class="n">const</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Return vector of SYCL devices associated with the platform and
-filtered by the <a class="reference internal" href="device.html#info-device"><span class="std std-ref">device_type</span></a>.</p>
+<p>Returns vector of SYCL devices associated with the platform and
+filtered by <a class="reference internal" href="device.html#info-device-type"><span class="std std-ref">device_type</span></a></p>
 <p class="rubric">Example</p>
 <p>See <a class="reference internal" href="#platform-example">platform-example</a>.</p>
 </div>

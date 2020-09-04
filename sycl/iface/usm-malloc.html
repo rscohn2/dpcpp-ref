@@ -181,22 +181,22 @@
   <div class="section" id="malloc-device">
 <span id="id1"></span><h1>malloc_device<a class="headerlink" href="#malloc-device" title="Permalink to this headline">¶</a></h1>
 <p><em>Since SYCL 2020</em></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span><span class="o">*</span> <span class="n">sycl</span><span class="p">::</span><span class="n">malloc_device</span><span class="p">(</span><span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span>
-                          <span class="n">const</span> <span class="n">sycl</span><span class="p">::</span><span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
-                          <span class="n">const</span> <span class="n">sycl</span><span class="p">::</span><span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
-<span class="n">void</span><span class="o">*</span> <span class="n">sycl</span><span class="p">::</span><span class="n">aligned_alloc_device</span><span class="p">(</span><span class="n">size_t</span> <span class="n">alignment</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span><span class="o">*</span> <span class="n">malloc_device</span><span class="p">(</span><span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span>
+                          <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
+                          <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+<span class="n">void</span><span class="o">*</span> <span class="n">aligned_alloc_device</span><span class="p">(</span><span class="n">size_t</span> <span class="n">alignment</span><span class="p">,</span>
                                  <span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span>
-                                 <span class="n">const</span> <span class="n">sycl</span><span class="p">::</span><span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
-                                 <span class="n">const</span> <span class="n">sycl</span><span class="p">::</span><span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+                                 <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
+                                 <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
 <span class="n">template</span> <span class="o">&lt;</span><span class="n">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-<span class="n">T</span><span class="o">*</span> <span class="n">sycl</span><span class="p">::</span><span class="n">malloc_device</span><span class="p">(</span><span class="n">size_t</span> <span class="n">count</span><span class="p">,</span>
-                       <span class="n">const</span> <span class="n">sycl</span><span class="p">::</span><span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
-                       <span class="n">const</span> <span class="n">sycl</span><span class="p">::</span><span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+<span class="n">T</span><span class="o">*</span> <span class="n">malloc_device</span><span class="p">(</span><span class="n">size_t</span> <span class="n">count</span><span class="p">,</span>
+                       <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
+                       <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
 <span class="n">template</span> <span class="o">&lt;</span><span class="n">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-<span class="n">T</span><span class="o">*</span> <span class="n">sycl</span><span class="p">::</span><span class="n">aligned_alloc_device</span><span class="p">(</span><span class="n">size_d</span> <span class="n">alignment</span><span class="p">,</span>
+<span class="n">T</span><span class="o">*</span> <span class="n">aligned_alloc_device</span><span class="p">(</span><span class="n">size_d</span> <span class="n">alignment</span><span class="p">,</span>
                               <span class="n">size_t</span> <span class="n">count</span><span class="p">,</span>
-                              <span class="n">const</span> <span class="n">sycl</span><span class="p">::</span><span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
-                              <span class="n">const</span> <span class="n">sycl</span><span class="p">::</span><span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+                              <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
+                              <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
 </pre></div>
 </div>
 <p class="rubric">Parameters</p>
@@ -238,11 +238,11 @@ functions (<a class="reference internal" href="command-group-handler.html#handle
 <div class="section" id="malloc-host">
 <h1>malloc_host<a class="headerlink" href="#malloc-host" title="Permalink to this headline">¶</a></h1>
 <p><em>Since SYCL 2020</em></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span><span class="o">*</span> <span class="n">sycl</span><span class="p">::</span><span class="n">malloc_host</span><span class="p">(</span><span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span> <span class="n">const</span> <span class="n">sycl</span><span class="p">::</span><span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span><span class="o">*</span> <span class="n">malloc_host</span><span class="p">(</span><span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span> <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
 <span class="n">template</span> <span class="o">&lt;</span><span class="n">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-<span class="n">void</span><span class="o">*</span> <span class="n">sycl</span><span class="p">::</span><span class="n">aligned_alloc_host</span><span class="p">(</span><span class="n">size_t</span> <span class="n">alignment</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span> <span class="n">const</span> <span class="n">sycl</span><span class="p">::</span><span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
-<span class="n">T</span><span class="o">*</span> <span class="n">sycl</span><span class="p">::</span><span class="n">malloc_host</span><span class="p">(</span><span class="n">size_t</span> <span class="n">count</span><span class="p">,</span> <span class="n">const</span> <span class="n">sycl</span><span class="p">::</span><span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
-<span class="n">T</span><span class="o">*</span> <span class="n">sycl</span><span class="p">::</span><span class="n">aligned_alloc_host</span><span class="p">(</span><span class="n">size_t</span> <span class="n">alignment</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">count</span><span class="p">,</span> <span class="n">const</span> <span class="n">sycl</span><span class="p">::</span><span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+<span class="n">void</span><span class="o">*</span> <span class="n">aligned_alloc_host</span><span class="p">(</span><span class="n">size_t</span> <span class="n">alignment</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span> <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+<span class="n">T</span><span class="o">*</span> <span class="n">malloc_host</span><span class="p">(</span><span class="n">size_t</span> <span class="n">count</span><span class="p">,</span> <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+<span class="n">T</span><span class="o">*</span> <span class="n">aligned_alloc_host</span><span class="p">(</span><span class="n">size_t</span> <span class="n">alignment</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">count</span><span class="p">,</span> <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
 </pre></div>
 </div>
 <p class="rubric">Parameters</p>
@@ -280,22 +280,22 @@ functions (<a class="reference internal" href="command-group-handler.html#handle
 <div class="section" id="malloc-shared">
 <h1>malloc_shared<a class="headerlink" href="#malloc-shared" title="Permalink to this headline">¶</a></h1>
 <p><em>Since SYCL 2020</em></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span><span class="o">*</span> <span class="n">sycl</span><span class="p">::</span><span class="n">malloc_shared</span><span class="p">(</span><span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span>
-                          <span class="n">const</span> <span class="n">sycl</span><span class="p">::</span><span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
-                          <span class="n">const</span> <span class="n">sycl</span><span class="p">::</span><span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
-<span class="n">void</span><span class="o">*</span> <span class="n">sycl</span><span class="p">::</span><span class="n">aligned_alloc_ahared</span><span class="p">(</span><span class="n">size_t</span> <span class="n">alignment</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span><span class="o">*</span> <span class="n">malloc_shared</span><span class="p">(</span><span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span>
+                          <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
+                          <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+<span class="n">void</span><span class="o">*</span> <span class="n">aligned_alloc_ahared</span><span class="p">(</span><span class="n">size_t</span> <span class="n">alignment</span><span class="p">,</span>
                               <span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span>
-                              <span class="n">const</span> <span class="n">sycl</span><span class="p">::</span><span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
-                              <span class="n">const</span> <span class="n">sycl</span><span class="p">::</span><span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+                              <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
+                              <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
 <span class="n">template</span> <span class="o">&lt;</span><span class="n">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-<span class="n">T</span><span class="o">*</span> <span class="n">sycl</span><span class="p">::</span><span class="n">malloc_shared</span><span class="p">(</span><span class="n">size_t</span> <span class="n">count</span><span class="p">,</span>
-                       <span class="n">const</span> <span class="n">sycl</span><span class="p">::</span><span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
-                       <span class="n">const</span> <span class="n">sycl</span><span class="p">::</span><span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+<span class="n">T</span><span class="o">*</span> <span class="n">malloc_shared</span><span class="p">(</span><span class="n">size_t</span> <span class="n">count</span><span class="p">,</span>
+                       <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
+                       <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
 <span class="n">template</span> <span class="o">&lt;</span><span class="n">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-<span class="n">T</span><span class="o">*</span> <span class="n">sycl</span><span class="p">::</span><span class="n">aligned_alloc_ahared</span><span class="p">(</span><span class="n">size_t</span> <span class="n">alignment</span><span class="p">,</span>
+<span class="n">T</span><span class="o">*</span> <span class="n">aligned_alloc_ahared</span><span class="p">(</span><span class="n">size_t</span> <span class="n">alignment</span><span class="p">,</span>
                            <span class="n">size_t</span> <span class="n">count</span><span class="p">,</span>
-                           <span class="n">const</span> <span class="n">sycl</span><span class="p">::</span><span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
-                           <span class="n">const</span> <span class="n">sycl</span><span class="p">::</span><span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+                           <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
+                           <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
 </pre></div>
 </div>
 <p class="rubric">Parameters</p>
@@ -334,7 +334,7 @@ optimize access.</p>
 <div class="section" id="free">
 <h1>free<a class="headerlink" href="#free" title="Permalink to this headline">¶</a></h1>
 <p><em>Since SYCL 2020</em></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">free</span><span class="p">(</span><span class="n">void</span><span class="o">*</span> <span class="n">ptr</span><span class="p">,</span> <span class="n">sycl</span><span class="p">::</span><span class="n">context</span><span class="o">&amp;</span> <span class="n">context</span><span class="p">);</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">free</span><span class="p">(</span><span class="n">void</span><span class="o">*</span> <span class="n">ptr</span><span class="p">,</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">context</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Free memory allocated by <a class="reference internal" href="#malloc-device">malloc_device</a>, <a class="reference internal" href="#malloc-host">malloc_host</a>, or
