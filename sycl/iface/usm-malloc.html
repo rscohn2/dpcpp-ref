@@ -182,21 +182,34 @@
 <span id="id1"></span><h1>malloc_device<a class="headerlink" href="#malloc-device" title="Permalink to this headline">¶</a></h1>
 <p><em>Since SYCL 2020</em></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span><span class="o">*</span> <span class="n">malloc_device</span><span class="p">(</span><span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span>
-                          <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
-                          <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+                    <span class="n">const</span> <span class="n">queue</span><span class="o">&amp;</span> <span class="n">q</span><span class="p">);</span>
 <span class="n">void</span><span class="o">*</span> <span class="n">aligned_alloc_device</span><span class="p">(</span><span class="n">size_t</span> <span class="n">alignment</span><span class="p">,</span>
-                                 <span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span>
-                                 <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
-                                 <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+                           <span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span>
+                           <span class="n">const</span> <span class="n">queue</span><span class="o">&amp;</span> <span class="n">q</span><span class="p">);</span>
 <span class="n">template</span> <span class="o">&lt;</span><span class="n">typename</span> <span class="n">T</span><span class="o">&gt;</span>
 <span class="n">T</span><span class="o">*</span> <span class="n">malloc_device</span><span class="p">(</span><span class="n">size_t</span> <span class="n">count</span><span class="p">,</span>
-                       <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
-                       <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+                 <span class="n">const</span> <span class="n">queue</span><span class="o">&amp;</span> <span class="n">q</span><span class="p">);</span>
 <span class="n">template</span> <span class="o">&lt;</span><span class="n">typename</span> <span class="n">T</span><span class="o">&gt;</span>
 <span class="n">T</span><span class="o">*</span> <span class="n">aligned_alloc_device</span><span class="p">(</span><span class="n">size_d</span> <span class="n">alignment</span><span class="p">,</span>
-                              <span class="n">size_t</span> <span class="n">count</span><span class="p">,</span>
-                              <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
-                              <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+                        <span class="n">size_t</span> <span class="n">count</span><span class="p">,</span>
+                        <span class="n">const</span> <span class="n">queue</span><span class="o">&amp;</span> <span class="n">q</span><span class="p">);</span>
+
+<span class="n">void</span><span class="o">*</span> <span class="n">malloc_device</span><span class="p">(</span><span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span>
+                    <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
+                    <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+<span class="n">void</span><span class="o">*</span> <span class="n">aligned_alloc_device</span><span class="p">(</span><span class="n">size_t</span> <span class="n">alignment</span><span class="p">,</span>
+                           <span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span>
+                           <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
+                           <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+<span class="n">template</span> <span class="o">&lt;</span><span class="n">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="n">T</span><span class="o">*</span> <span class="n">malloc_device</span><span class="p">(</span><span class="n">size_t</span> <span class="n">count</span><span class="p">,</span>
+                 <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
+                 <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+<span class="n">template</span> <span class="o">&lt;</span><span class="n">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="n">T</span><span class="o">*</span> <span class="n">aligned_alloc_device</span><span class="p">(</span><span class="n">size_d</span> <span class="n">alignment</span><span class="p">,</span>
+                        <span class="n">size_t</span> <span class="n">count</span><span class="p">,</span>
+                        <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
+                        <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
 </pre></div>
 </div>
 <p class="rubric">Parameters</p>
@@ -218,7 +231,10 @@
 <tr class="row-even"><td><p>dev</p></td>
 <td><p>See <a class="reference internal" href="device.html#device"><span class="std std-ref">device</span></a></p></td>
 </tr>
-<tr class="row-odd"><td><p>ctxt</p></td>
+<tr class="row-odd"><td><p>q</p></td>
+<td><p>See <a class="reference internal" href="queue.html#queue"><span class="std std-ref">queue</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>ctxt</p></td>
 <td><p>See <a class="reference internal" href="context.html#context"><span class="std std-ref">context</span></a></p></td>
 </tr>
 </tbody>
@@ -240,11 +256,35 @@ functions (<a class="reference internal" href="command-group-handler.html#handle
 <div class="section" id="malloc-host">
 <h1>malloc_host<a class="headerlink" href="#malloc-host" title="Permalink to this headline">¶</a></h1>
 <p><em>Since SYCL 2020</em></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span><span class="o">*</span> <span class="n">malloc_host</span><span class="p">(</span><span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span> <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span><span class="o">*</span> <span class="n">malloc_host</span><span class="p">(</span><span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span>
+                    <span class="n">const</span> <span class="n">queue</span><span class="o">&amp;</span> <span class="n">q</span><span class="p">);</span>
+<span class="n">void</span><span class="o">*</span> <span class="n">aligned_alloc_host</span><span class="p">(</span><span class="n">size_t</span> <span class="n">alignment</span><span class="p">,</span>
+                           <span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span>
+                           <span class="n">const</span> <span class="n">queue</span><span class="o">&amp;</span> <span class="n">q</span><span class="p">);</span>
 <span class="n">template</span> <span class="o">&lt;</span><span class="n">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-<span class="n">void</span><span class="o">*</span> <span class="n">aligned_alloc_host</span><span class="p">(</span><span class="n">size_t</span> <span class="n">alignment</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span> <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
-<span class="n">T</span><span class="o">*</span> <span class="n">malloc_host</span><span class="p">(</span><span class="n">size_t</span> <span class="n">count</span><span class="p">,</span> <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
-<span class="n">T</span><span class="o">*</span> <span class="n">aligned_alloc_host</span><span class="p">(</span><span class="n">size_t</span> <span class="n">alignment</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">count</span><span class="p">,</span> <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+<span class="n">T</span><span class="o">*</span> <span class="n">malloc_host</span><span class="p">(</span><span class="n">size_t</span> <span class="n">count</span><span class="p">,</span>
+                 <span class="n">const</span> <span class="n">queue</span><span class="o">&amp;</span> <span class="n">q</span><span class="p">);</span>
+<span class="n">template</span> <span class="o">&lt;</span><span class="n">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="n">T</span><span class="o">*</span> <span class="n">aligned_alloc_host</span><span class="p">(</span><span class="n">size_d</span> <span class="n">alignment</span><span class="p">,</span>
+                        <span class="n">size_t</span> <span class="n">count</span><span class="p">,</span>
+                        <span class="n">const</span> <span class="n">queue</span><span class="o">&amp;</span> <span class="n">q</span><span class="p">);</span>
+
+<span class="n">void</span><span class="o">*</span> <span class="n">malloc_host</span><span class="p">(</span><span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span>
+                    <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
+                    <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+<span class="n">void</span><span class="o">*</span> <span class="n">aligned_alloc_host</span><span class="p">(</span><span class="n">size_t</span> <span class="n">alignment</span><span class="p">,</span>
+                           <span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span>
+                           <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
+                           <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+<span class="n">template</span> <span class="o">&lt;</span><span class="n">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="n">T</span><span class="o">*</span> <span class="n">malloc_host</span><span class="p">(</span><span class="n">size_t</span> <span class="n">count</span><span class="p">,</span>
+                 <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
+                 <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+<span class="n">template</span> <span class="o">&lt;</span><span class="n">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="n">T</span><span class="o">*</span> <span class="n">aligned_alloc_host</span><span class="p">(</span><span class="n">size_d</span> <span class="n">alignment</span><span class="p">,</span>
+                        <span class="n">size_t</span> <span class="n">count</span><span class="p">,</span>
+                        <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
+                        <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
 </pre></div>
 </div>
 <p class="rubric">Parameters</p>
@@ -284,21 +324,34 @@ leaks. On failure, returns nullptr.</p>
 <h1>malloc_shared<a class="headerlink" href="#malloc-shared" title="Permalink to this headline">¶</a></h1>
 <p><em>Since SYCL 2020</em></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span><span class="o">*</span> <span class="n">malloc_shared</span><span class="p">(</span><span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span>
-                          <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
-                          <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
-<span class="n">void</span><span class="o">*</span> <span class="n">aligned_alloc_ahared</span><span class="p">(</span><span class="n">size_t</span> <span class="n">alignment</span><span class="p">,</span>
-                              <span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span>
-                              <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
-                              <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+                    <span class="n">const</span> <span class="n">queue</span><span class="o">&amp;</span> <span class="n">q</span><span class="p">);</span>
+<span class="n">void</span><span class="o">*</span> <span class="n">aligned_alloc_shared</span><span class="p">(</span><span class="n">size_t</span> <span class="n">alignment</span><span class="p">,</span>
+                           <span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span>
+                           <span class="n">const</span> <span class="n">queue</span><span class="o">&amp;</span> <span class="n">q</span><span class="p">);</span>
 <span class="n">template</span> <span class="o">&lt;</span><span class="n">typename</span> <span class="n">T</span><span class="o">&gt;</span>
 <span class="n">T</span><span class="o">*</span> <span class="n">malloc_shared</span><span class="p">(</span><span class="n">size_t</span> <span class="n">count</span><span class="p">,</span>
-                       <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
-                       <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+                 <span class="n">const</span> <span class="n">queue</span><span class="o">&amp;</span> <span class="n">q</span><span class="p">);</span>
 <span class="n">template</span> <span class="o">&lt;</span><span class="n">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-<span class="n">T</span><span class="o">*</span> <span class="n">aligned_alloc_ahared</span><span class="p">(</span><span class="n">size_t</span> <span class="n">alignment</span><span class="p">,</span>
-                           <span class="n">size_t</span> <span class="n">count</span><span class="p">,</span>
+<span class="n">T</span><span class="o">*</span> <span class="n">aligned_alloc_shared</span><span class="p">(</span><span class="n">size_d</span> <span class="n">alignment</span><span class="p">,</span>
+                        <span class="n">size_t</span> <span class="n">count</span><span class="p">,</span>
+                        <span class="n">const</span> <span class="n">queue</span><span class="o">&amp;</span> <span class="n">q</span><span class="p">);</span>
+
+<span class="n">void</span><span class="o">*</span> <span class="n">malloc_shared</span><span class="p">(</span><span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span>
+                    <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
+                    <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+<span class="n">void</span><span class="o">*</span> <span class="n">aligned_alloc_shared</span><span class="p">(</span><span class="n">size_t</span> <span class="n">alignment</span><span class="p">,</span>
+                           <span class="n">size_t</span> <span class="n">num_bytes</span><span class="p">,</span>
                            <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
                            <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+<span class="n">template</span> <span class="o">&lt;</span><span class="n">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="n">T</span><span class="o">*</span> <span class="n">malloc_shared</span><span class="p">(</span><span class="n">size_t</span> <span class="n">count</span><span class="p">,</span>
+                 <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
+                 <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
+<span class="n">template</span> <span class="o">&lt;</span><span class="n">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="n">T</span><span class="o">*</span> <span class="n">aligned_alloc_shared</span><span class="p">(</span><span class="n">size_d</span> <span class="n">alignment</span><span class="p">,</span>
+                        <span class="n">size_t</span> <span class="n">count</span><span class="p">,</span>
+                        <span class="n">const</span> <span class="n">device</span><span class="o">&amp;</span> <span class="n">dev</span><span class="p">,</span>
+                        <span class="n">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">ctxt</span><span class="p">);</span>
 </pre></div>
 </div>
 <p class="rubric">Parameters</p>

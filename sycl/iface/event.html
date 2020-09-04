@@ -277,6 +277,39 @@ to handlers associated with the commands.</p>
 </div>
 <p>Returns information about the queue as determined by <code class="docutils literal notranslate"><span class="pre">param</span></code>. See
 <a class="reference internal" href="#event-profiling-info">Event profiling info</a> for details.</p>
+<p class="rubric" id="event-elapsed-time">Example</p>
+<p>Measure the elapsed time of a memcpy executed on a device with event
+profiling info.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;CL/sycl.hpp&gt;</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">auto</span> <span class="n">q</span> <span class="o">=</span> <span class="n">sycl</span><span class="p">::</span><span class="n">queue</span><span class="p">(</span><span class="n">sycl</span><span class="p">::</span><span class="n">gpu_selector</span><span class="p">());</span>
+
+  <span class="n">const</span> <span class="nb">int</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">;</span>
+
+  <span class="o">//</span> <span class="n">Alloc</span> <span class="n">memory</span> <span class="n">on</span> <span class="n">host</span>
+  <span class="n">auto</span> <span class="n">src</span> <span class="o">=</span> <span class="n">aligned_alloc</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">);</span>
+  <span class="n">memset</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">);</span>
+
+  <span class="o">//</span> <span class="n">Alloc</span> <span class="n">memory</span> <span class="n">on</span> <span class="n">device</span>
+  <span class="n">auto</span> <span class="n">dst</span> <span class="o">=</span> <span class="n">sycl</span><span class="p">::</span><span class="n">malloc_device</span><span class="p">(</span><span class="nb">bytes</span><span class="p">,</span> <span class="n">q</span><span class="p">);</span>
+  <span class="n">q</span><span class="o">.</span><span class="n">memset</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)</span><span class="o">.</span><span class="n">wait</span><span class="p">();</span>
+
+  <span class="o">//</span> <span class="n">Copy</span> <span class="kn">from</span> <span class="nn">host</span> <span class="n">to</span> <span class="n">device</span>
+  <span class="n">auto</span> <span class="n">event</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">memcpy</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="n">src</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">);</span>
+  <span class="n">event</span><span class="o">.</span><span class="n">wait</span><span class="p">();</span>
+
+  <span class="n">auto</span> <span class="n">end</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">get_profiling_info</span><span class="o">&lt;</span><span class="n">sycl</span><span class="p">::</span><span class="n">info</span><span class="p">::</span><span class="n">event_profiling</span><span class="p">::</span><span class="n">command_end</span><span class="o">&gt;</span><span class="p">();</span>
+  <span class="n">auto</span> <span class="n">start</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">get_profiling_info</span><span class="o">&lt;</span><span class="n">sycl</span><span class="p">::</span><span class="n">info</span><span class="p">::</span><span class="n">event_profiling</span><span class="p">::</span><span class="n">command_start</span><span class="o">&gt;</span><span class="p">();</span>
+
+  <span class="n">std</span><span class="p">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;Elapsed time: &quot;</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">)</span><span class="o">/</span><span class="mf">1.0e9</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot; seconds</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Elapsed</span> <span class="n">time</span><span class="p">:</span> <span class="mf">4.2662e-05</span> <span class="n">seconds</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="event-info">
