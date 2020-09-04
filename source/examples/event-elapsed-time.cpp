@@ -1,7 +1,7 @@
 #include <CL/sycl.hpp>
 
 int main() {
-  auto q = sycl::queue(sycl::cpu_selector());
+  auto q = sycl::queue(sycl::gpu_selector());
 
   const int bytes = 1024 * 1024;
 
@@ -20,5 +20,5 @@ int main() {
   auto end = event.get_profiling_info<sycl::info::event_profiling::command_end>();
   auto start = event.get_profiling_info<sycl::info::event_profiling::command_start>();
 
-  std::cout << "Elapsed time: " << end-start/1.0e9 << "\n";
+  std::cout << "Elapsed time: " << (end-start)/1.0e9 << " seconds\n";
 }
