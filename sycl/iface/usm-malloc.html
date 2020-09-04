@@ -223,13 +223,15 @@
 </tr>
 </tbody>
 </table>
-<p>Returns a pointer to memory that resides on the device.</p>
+<p>Returns a pointer to the newly allocated memory on the specified
+device on success. This memory is not accessible on the host. Memory
+allocated by malloc_device must be deallocated with <a class="reference internal" href="#sycl-free"><span class="std std-ref">sycl::free</span></a> to avoid memory leaks. If ctxt is a host context, it
+should behave as if calling malloc_host. On failure, returns nullptr.</p>
 <p>The host may not directly reference the memory, but can read and write
 the memory with <a class="reference internal" href="queue.html#queue"><span class="std std-ref">queue</span></a> member functions (<a class="reference internal" href="queue.html#queue-memset"><span class="std std-ref">memset</span></a>,
 <a class="reference internal" href="queue.html#queue-memcpy"><span class="std std-ref">memcpy</span></a>, <a class="reference internal" href="queue.html#queue-fill"><span class="std std-ref">fill</span></a>) or <a class="reference internal" href="command-group-handler.html#handler"><span class="std std-ref">handler</span></a> member
 functions (<a class="reference internal" href="command-group-handler.html#handler-memset"><span class="std std-ref">memset</span></a>, <a class="reference internal" href="command-group-handler.html#handler-memcpy"><span class="std std-ref">memcpy</span></a>, and
 <a class="reference internal" href="command-group-handler.html#handler-fill"><span class="std std-ref">fill</span></a>).</p>
-<p>Deallocate with <a class="reference internal" href="#free">free</a>.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference external" href="https://www.khronos.org/registry/SYCL/specs/sycl-2020-provisional.pdf">SYCL Specification</a> Section 4.8.5.1</p>
@@ -269,9 +271,10 @@ functions (<a class="reference internal" href="command-group-handler.html#handle
 </tr>
 </tbody>
 </table>
-<p>Returns a pointer to memory that resides on the host.</p>
-<p>Host and device may reference the memory.</p>
-<p>Deallocate with <a class="reference internal" href="#free">free</a>.</p>
+<p>Returns a pointer to the newly allocated host memory on success. Host
+and device may reference the memory.  Memory allocated by malloc_host
+must be deallocated with <a class="reference internal" href="#sycl-free"><span class="std std-ref">sycl::free</span></a> to avoid memory
+leaks. On failure, returns nullptr.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference external" href="https://www.khronos.org/registry/SYCL/specs/sycl-2020-provisional.pdf">SYCL Specification</a> Section 4.8.5.2</p>
@@ -322,17 +325,19 @@ functions (<a class="reference internal" href="command-group-handler.html#handle
 </tr>
 </tbody>
 </table>
-<p>Returns a pointer to memory that may reside on host or device.</p>
-<p>The SYCL runtime may migrate the data between host and device to
-optimize access.</p>
-<p>Deallocate with <a class="reference internal" href="#free">free</a>.</p>
+<p>Returns a pointer to the newly allocated shared memory on the
+specified device on success. The SYCL runtime may migrate the data
+between host and device to optimize access.  Memory allocated by
+malloc_shared must be deallocated with <a class="reference internal" href="#sycl-free"><span class="std std-ref">sycl::free</span></a>
+to avoid memory leaks. If ctxt is a host context, should behave as if
+calling malloc_host. On failure, returns nullptr.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference external" href="https://www.khronos.org/registry/SYCL/specs/sycl-2020-provisional.pdf">SYCL Specification</a> Section 4.8.5.2</p>
 </div>
 </div>
 <div class="section" id="free">
-<h1>free<a class="headerlink" href="#free" title="Permalink to this headline">¶</a></h1>
+<span id="sycl-free"></span><h1>free<a class="headerlink" href="#free" title="Permalink to this headline">¶</a></h1>
 <p><em>Since SYCL 2020</em></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">free</span><span class="p">(</span><span class="n">void</span><span class="o">*</span> <span class="n">ptr</span><span class="p">,</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">context</span><span class="p">);</span>
 </pre></div>
