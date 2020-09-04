@@ -393,6 +393,7 @@ calling malloc_host. On failure, returns nullptr.</p>
 <span id="sycl-free"></span><h1>free<a class="headerlink" href="#free" title="Permalink to this headline">¶</a></h1>
 <p><em>Since SYCL 2020</em></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">free</span><span class="p">(</span><span class="n">void</span><span class="o">*</span> <span class="n">ptr</span><span class="p">,</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">context</span><span class="p">);</span>
+<span class="n">void</span> <span class="n">free</span><span class="p">(</span><span class="n">void</span><span class="o">*</span> <span class="n">ptr</span><span class="p">,</span> <span class="n">queue</span><span class="o">&amp;</span> <span class="n">q</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Free memory allocated by <a class="reference internal" href="#malloc-device">malloc_device</a>, <a class="reference internal" href="#malloc-host">malloc_host</a>, or
